@@ -1709,6 +1709,7 @@ void WiFiManager::handleParamSave() {
 
   String page = getHTTPHead(FPSTR(S_titleparamsaved)); // @token titleparamsaved
   page += FPSTR(HTTP_PARAMSAVED);
+  page += FPSTR("<form action='/wifi'    method='get'><button>Continue Setup WiFi</button></form><br/>\n");
   page += FPSTR(HTTP_END);
 
   server->sendHeader(FPSTR(HTTP_HEAD_CL), String(page.length()));
